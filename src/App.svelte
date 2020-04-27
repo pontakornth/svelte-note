@@ -1,6 +1,6 @@
 <script>
 import Editor from './components/Editor.svelte';
-import 'bulma';
+import './styles/theme.scss';
 let name = "World";
 </script>
 
