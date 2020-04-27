@@ -1,0 +1,32 @@
+{
+  "name": "svelte-note",
+  "version": "1.0.0",
+  "description": "A note taking app for learning Svelte",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "parcel index.html",
+    "build": "parcel build index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pontakornth/svelte-note.git"
+  },
+  "keywords": [
+    "Svelte",
+    "Note"
+  ],
+  "author": "pontakornth",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pontakornth/svelte-note/issues"
+  },
+  "homepage": "https://github.com/pontakornth/svelte-note#readme",
+  "dependencies": {
+    "parcel": "^1.12.4",
+    "svelte": "^3.21.0"
+  },
+  "devDependencies": {
+    "parcel-plugin-svelte": "^4.0.6"
+  }
+}
