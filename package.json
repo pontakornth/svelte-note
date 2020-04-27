@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/pontakornth/svelte-note#readme",
   "dependencies": {
+    "bulma": "^0.8.2",
     "parcel": "^1.12.4",
     "svelte": "^3.21.0"
   },
