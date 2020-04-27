@@ -5,6 +5,5 @@ let text = "";
 <h1>Classic markdown editor</h1>
 <textarea placeholder="Your note here" bind:value={text} />
 
-<div class="display">
- {text}
+<div class="content" contenteditable="false" bind:innerHTML={text}>
 </div>
