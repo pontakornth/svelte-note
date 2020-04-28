@@ -24,8 +24,13 @@
   "homepage": "https://github.com/pontakornth/svelte-note#readme",
   "dependencies": {
     "bulma": "^0.8.2",
+    "html": "^1.0.0",
+    "markdown": "^0.5.0",
     "parcel": "^1.12.4",
-    "svelte": "^3.21.0"
+    "remark-html": "^11.0.1",
+    "remark-parse": "^8.0.2",
+    "svelte": "^3.21.0",
+    "unified": "^9.0.0"
   },
   "devDependencies": {
     "parcel-plugin-svelte": "^4.0.6",
