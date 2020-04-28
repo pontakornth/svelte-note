@@ -1,2 +1,12 @@
+$family-primary: "K2D", sans-serif;
+$family-secondary: "Kanit", sans-serif;
+
+h1,h2,h3,h4,h5,h6,.title,.subtitle {
+  font-family: $family-secondary;
+}
+
+html, body, #app {
+  height:100%;
+}
 
 @import "../../node_modules/bulma/bulma.sass";
