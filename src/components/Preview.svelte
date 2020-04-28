@@ -1,14 +1,10 @@
 <script>
-import unified from 'unified';
-import markdown from 'remark-parse';
-import html from 'remark-html';
+import parser from '../utils/parser';
 export let content = '';
 let htmlContent = '';
 $: has_content = content.length > 0
-$: preview_content =  htmlContent.length > 0 ? htmlContent : 'Nothing here';
-$: unified()
-    .use(markdown)
-    .use(html)
+$: preview_content =  content.length > 0 ? htmlContent : 'Nothing here';
+$: parser
     .process(content, (err, file) => {
       htmlContent = String(file)
     })
