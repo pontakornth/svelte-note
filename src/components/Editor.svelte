@@ -1,25 +1,45 @@
 <script>
 import Preview from './Preview.svelte';
 let content = '';
+let mode = 'edit';
 $: isContentEmpty = content.length  === 0;
 const resetContent = () => {
   content = ''
 }
+const editMode = () => {
+  mode = 'edit'
+}
+const previewMode = () => {
+  mode = 'preview'
+}
 </script>
 
-<div class="editor">
-  <h1 class="title is-1 has-text-centered">ตัวแก้ไข Markdown</h1>
-  <textarea class="textarea" placeholder="Your note here" bind:value={content} />
+<div>
+  <div class="editor column is-12">
+    <div class="tabs">
+      <ul>
+        <li class:is-active={mode === 'edit'}><a on:click={editMode} href="javascript:void(0)">Editor</a></li>
+        <li class:is-active={mode === 'preview'}><a on:click={previewMode} href="javascript:void(0)">Preview</a></li>
+      </ul>
+    </div>
+    {#if mode == 'edit'}
+    <textarea class="textarea" rows="25" placeholder="Your note here" bind:value={content} />
+    <div class="buttons mt">
+      <button class="button is-success">Save</button>
+      <button class="button is-danger" disabled={isContentEmpty} on:click={resetContent}>Reset</button>
+    </div>
+    {:else}
+    <Preview {content} />
+    {/if}
+  </div>
 </div>
-<Preview {content} />
-<div class="buttons">
-<button class="button is-success">Save</button>
-<button class="button is-danger" disabled={isContentEmpty} on:click={resetContent}>Reset</button>
-</div>
+
 
 <style lang="scss">
 .editor {
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+  padding: 1rem 2rem 1rem 2rem;
+}
+.mt {
+  margin-top: 1rem;
 }
 </style>

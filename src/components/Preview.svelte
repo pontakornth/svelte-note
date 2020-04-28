@@ -18,7 +18,6 @@ $: parser
 .preview {
   min-height: 5rem;
   padding: calc(0.75em - 1px);
-  border: 1px solid rgba(49,49,49,.5);
-  border-radius: 4px;
+  margin-top: 1rem;
 }
 </style>
