@@ -7,7 +7,13 @@ const initialState = writable({
     title: 'Example',
     content: '# Example',
     uuid: uuidv4(),
-  }]
+  },
+  {
+    title: 'Other example',
+    content: 'You can change page',
+    uuid: uuidv4(),
+  }
+  ]
 });
 
 function createNotes() {
