@@ -28,7 +28,7 @@ function createNotes() {
         pages:[...notes.pages, {
           title: 'Untitled',
           content: '',
-          uuid: uuidv4,
+          uuid: uuidv4(),
         }]
         }
         )
