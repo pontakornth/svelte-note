@@ -47,7 +47,7 @@ function createNotes() {
     deleteAtIndex: (index) => {
       update(notes => ({
         ...notes,
-        currentIndex: index === notes.pages.length - 1 ? (index === 0 ? 0 : index -1) : notes.currentIndex,
+        currentIndex: notes.currentIndex === notes.pages.length - 1 ? (index === 0 ? 0 : index -1) : notes.currentIndex,
         pages: [
           ...notes.pages.slice(0,index)
                   .concat(notes.pages.slice(index+1))
