@@ -1,6 +1,34 @@
 import { writable } from 'svelte/store';
+import { v4 as uuidv4 } from 'uuid';
 
-export const pages = writable({
-  currentPage: 1,
-  pages: []
+const initialState = writable({
+  currentIndex: 0,
+  pages: [{
+    title: 'Example',
+    body: '# Example',
+    uuid: uuidv4(),
+  }]
 });
+
+function createNotes() {
+  const { subscribe, set, update } = initialState;
+  return {
+    subscribe,
+    set,
+    update,
+    newPage: () => {
+      update(notes => ({
+        ...notes,
+        pages:[...notes.pages, {
+          title: 'Untitled',
+          body: '',
+          uuid: uuidv4,
+        }]
+        }
+        )
+      )
+    },
+  }
+}
+
+export const notes = createNotes();
