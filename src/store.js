@@ -34,6 +34,14 @@ function createNotes() {
         )
       )
     },
+    deleteAll: () => {
+      update(notes => ({
+        ...notes,
+        pages: []
+      }
+      )
+     )
+    }
   }
 }
 
