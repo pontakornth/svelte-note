@@ -18,7 +18,7 @@ $: parser
 <style lang="scss">
 .preview {
   min-height: 5rem;
-  padding: calc(0.75em - 1px);
+  
   margin-top: 1rem;
 }
 </style>
