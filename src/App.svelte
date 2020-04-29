@@ -16,7 +16,7 @@ import './styles/theme.scss';
 
 <style lang="scss">
 .app {
-  height: 100%;
+  min-height: 100%;
 }
 .padded {
   padding: 1rem;
