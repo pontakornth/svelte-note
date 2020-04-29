@@ -30,6 +30,7 @@
     "remark-html": "^11.0.1",
     "remark-parse": "^8.0.2",
     "svelte": "^3.21.0",
+    "svelte-preprocess": "^3.7.4",
     "unified": "^9.0.0",
     "uuid": "^7.0.3"
   },
