@@ -1,11 +1,12 @@
 <script>
 import Preview from './Preview.svelte';
-let title = '';
-let content = '';
+import { notes } from '../store.js';
+$: title = $notes.pages[$notes.currentIndex].title;
+$: content = $notes.pages[$notes.currentIndex].content;
+$: isEmpty = $notes.pages[$notes.currentIndex].content;
 let mode = 'edit';
-$: isContentEmpty = content.length  === 0;
 const resetContent = () => {
-  content = ''
+  $notes.pages[$notes.currentIndex].content = ''
 }
 const editMode = () => {
   mode = 'edit'
@@ -24,11 +25,11 @@ const previewMode = () => {
       </ul>
     </div>
     {#if mode == 'edit'}
-    <input type="text" placeholder="Title" class="input" bind:value={title}>
-    <textarea class="textarea mt" rows="25" placeholder="Your note here" bind:value={content} />
+    <input type="text" placeholder="Title" class="input" bind:value={$notes.pages[$notes.currentIndex].title}>
+    <textarea class="textarea mt" rows="25" placeholder="Your note here" bind:value={$notes.pages[$notes.currentIndex].content} />
     <div class="buttons mt">
       <button class="button is-success">Save</button>
-      <button class="button is-danger" disabled={isContentEmpty} on:click={resetContent}>Reset</button>
+      <button class="button is-danger" disabled={isEmpty} on:click={resetContent}>Reset</button>
     </div>
     {:else}
     <Preview {content} {title} />
