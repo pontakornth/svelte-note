@@ -1,5 +1,6 @@
 <script>
 import Preview from './Preview.svelte';
+let title = '';
 let content = '';
 let mode = 'edit';
 $: isContentEmpty = content.length  === 0;
@@ -23,13 +24,14 @@ const previewMode = () => {
       </ul>
     </div>
     {#if mode == 'edit'}
-    <textarea class="textarea" rows="25" placeholder="Your note here" bind:value={content} />
+    <input type="text" placeholder="Title" class="input" bind:value={title}>
+    <textarea class="textarea mt" rows="25" placeholder="Your note here" bind:value={content} />
     <div class="buttons mt">
       <button class="button is-success">Save</button>
       <button class="button is-danger" disabled={isContentEmpty} on:click={resetContent}>Reset</button>
     </div>
     {:else}
-    <Preview {content} />
+    <Preview {content} {title} />
     {/if}
   </div>
 </div>
