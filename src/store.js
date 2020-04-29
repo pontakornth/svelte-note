@@ -5,7 +5,7 @@ const initialState = writable({
   currentIndex: 0,
   pages: [{
     title: 'Example',
-    body: '# Example',
+    content: '# Example',
     uuid: uuidv4(),
   }]
 });
@@ -21,7 +21,7 @@ function createNotes() {
         ...notes,
         pages:[...notes.pages, {
           title: 'Untitled',
-          body: '',
+          content: '',
           uuid: uuidv4,
         }]
         }
