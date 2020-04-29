@@ -35,12 +35,26 @@ function createNotes() {
       )
     },
     deleteAll: () => {
+      update(notes => {
+        return {
+          ...notes,
+          currentIndex: 0,
+          pages: []
+        }
+      }
+     )
+    },
+    deleteAtIndex: (index) => {
       update(notes => ({
         ...notes,
-        pages: []
-      }
+        currentIndex: index === notes.pages.length - 1 ? (index === 0 ? 0 : index -1) : notes.currentIndex,
+        pages: [
+          ...notes.pages.slice(0,index)
+                  .concat(notes.pages.slice(index+1))
+          ]
+        }
       )
-     )
+      )
     }
   }
 }

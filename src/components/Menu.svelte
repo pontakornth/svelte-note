@@ -13,7 +13,7 @@ const changePage = (index) => {
   {#each $notes.pages as page, index (page.uuid)}
   <div class="item">
     <a href="javascript:void(0)" class:is-active={$notes.currentIndex === index } on:click={changePage(index)}>{page.title}</a>
-    <a href="javascript:void(0)" class:is-visible={$notes.currentIndex === index } class="delete-button has-text-danger">
+    <a href="javascript:void(0)" class:is-visible={$notes.currentIndex === index } on:click={notes.deleteAtIndex(index)}  class="delete-button has-text-danger">
       <span class="icon">
         <span class="material-icons">clear</span>
       </span>
