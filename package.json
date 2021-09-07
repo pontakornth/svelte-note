@@ -28,7 +28,7 @@
     "markdown": "^0.5.0",
     "material-icons": "^0.3.1",
     "parcel": "^1.12.4",
-    "remark-html": "^11.0.1",
+    "remark-html": "^13.0.2",
     "remark-parse": "^8.0.2",
     "svelte": "^3.21.0",
     "svelte-preprocess": "^3.7.4",
